@@ -1,3 +1,4 @@
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -45,6 +46,11 @@ export const appRoutes: Routes = [
         path: 'lists',
         component: ListsComponent,
         resolve: { users: ListsResolver }
+      },
+      {
+        path: 'admin',
+        component: AdminPanelComponent,
+        data: {roles : ['Admin', 'Moderator']}
       }
     ]
   },
